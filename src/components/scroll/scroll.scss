@@ -1,0 +1,74 @@
+// Make animation to hide card back in deck
+
+
+
+
+.cardBack{
+    animation: cardBack 0.5s ease-in-out;
+    @keyframes cardBack {
+      // move from current position, to top left corner
+      to {
+        opacity: 1;
+      }
+      // use hiddenCard to hide card
+      from {
+        min-width:0;
+        transform: scale(0.6) ;
+        opacity: 0;
+        
+        width:0;
+        // padding: 0 ;
+        // margin: 0 ;
+        min-height: 0;
+      }
+    }
+  }
+  .hideCard{
+    animation: hideCard 0.5s forwards;
+    @keyframes hideCard {
+      // move from current position, to top left corner
+      to {
+        transform:scale(0.6) ;
+        opacity: 0;
+        
+        min-width:0;
+        
+        width:0;
+        // padding: 0 ;
+        // margin: 0 ;
+        min-height: 0;
+      }
+      from {
+        opacity: 1;
+      }
+    }
+  
+  }
+
+
+
+  
+  
+  .slideItem{
+    position: relative;
+    
+    @extend .cardBack;
+    >div{
+        position: absolute;
+        
+        animation-direction: normal;
+    }
+    
+    
+    &.hidden{
+        
+        @extend .hideCard;
+      
+    }
+  }
+
+  .scroll{
+    // overflow: hidden
+    
+  }
+

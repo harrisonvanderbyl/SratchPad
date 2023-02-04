@@ -1,0 +1,68 @@
+.quill{
+    height :100%;
+    
+    
+    // make text appear burnt into page with artistic font
+    .ql-container{
+        font-family: 'Bungee Shade', cursive !important;
+        color: #000;
+        font-size: 24px;
+        width:100%
+       
+        // position: relative;
+       
+        // overflow-y: scroll;
+        // z-index: 3;
+
+        
+        
+
+    }
+    border: none;
+    
+
+    
+}
+
+
+
+
+.readonly{
+    .ql-toolbar.ql-snow{
+        display: none;
+    }
+    // .ql-container{
+    //     padding: 10% 0%;
+
+    // }
+}
+
+.ql-toolbar.ql-snow{
+    // Make svg a dark black
+    font-family: 'Bungee Shade', cursive !important;
+        color: #000;
+    // make border appear burnt
+    
+}
+
+.editor{
+    // Make into scroll
+    // overflow-y: scroll;
+    // Set size of scroll
+    width: calc(2480px/4);
+    height: calc(3508px/4);
+    
+    position: relative;
+    
+    // Make things center
+    margin: 10px auto;
+    // transform: rotatex(-40deg) 
+    // Artistic burnt border
+    
+    // Have background image fade into border
+ 
+    // blur the edges of the background image
+   
+    
+    
+}

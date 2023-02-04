@@ -1,0 +1,148 @@
+.background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  filter: blur(5px);
+}
+
+.spinning{
+  animation: rotation 2s infinite linear;
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+}
+
+.paperus{
+  animation: fadeIn 0.5s forwards;
+  
+  background-size: cover;
+  background-image: var(--paper-image);
+
+  margin:10px;
+  padding:10px;
+  position: relative;
+  // if also has button class, then have it darken on hover
+  &.button:hover{
+    filter : brightness(0.8);
+  }
+  // if button, change cursor to pointer
+  &.button{
+    cursor: pointer;
+  }
+}
+.ql-container{
+  padding: 24px 30px;
+  @extend .paperus ;
+  // position: absolute;
+  // left: -10%;
+  // top: -10%;
+  // right:-10%;
+  // bottom: -10%;
+}
+.ql-toolbar.ql-snow{
+  // Make svg a dark black
+  
+  @extend .paperus ;
+  // make border appear burnt
+  
+}
+
+
+
+.paperus::after{
+  content: '';
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  right:-3px;
+  bottom: -3px;
+  border: 1rem solid;
+  border-image: var(--border-image) 60 stretch round !important;
+  // no click events
+  display: block !important;
+
+  pointer-events: none;
+}
+
+
+// Change input pointer to paintbrush if hovering over
+
+input,textarea,.ql-editor{
+  cursor: url("https://cdn-icons-png.flaticon.com/16/16/16310.png") 0 32, auto;
+}
+
+.charButton{
+  min-width: 32px;
+  height: 32px;
+}
+
+.character-menu{
+  // overflow: hidden;
+  
+}
+
+.hidden-menu{
+  // fade out
+  
+  animation: fadeOut 0.5s forwards;
+  @keyframes fadeOut {
+
+    // move from current position, to top left corner
+    to {
+      opacity: 0%;
+      width:0px; 
+      transform: translateX("-100%");
+
+      
+      
+      
+    }
+    from {
+      opacity: 1;
+      width:600px
+    }
+  }
+}
+
+.show-menu{
+  // fade in
+  animation: overMenuFadeIn 0.5s forwards;
+}
+
+@keyframes overMenuFadeIn {
+  // move from current position, to top left corner
+  from {
+    opacity: 0;
+
+    width:0px
+    ; transform: translateX("-100%");  
+  }
+  to {
+    opacity: 1;
+    width:500px
+
+  }
+}
+
+
+
+.hover-large:hover{
+  animation: hoverLarge 0.5s forwards;
+}
+
+@keyframes hoverLarge {
+  // move from current position, to top left corner
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
