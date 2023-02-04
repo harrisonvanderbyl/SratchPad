@@ -20,7 +20,7 @@ import { Character } from "./components/character/Character.types";
 
 function App() {
   const [textData, setTextData] = useState<string[]>(
-    JSON.parse(localStorage.getItem("textdata") ?? "['']")
+    JSON.parse(localStorage.getItem("textdata") ?? `[""]`)
   );
   const [isLoadingBackground, setIsLoadingBackground] = useState(false);
   const [theme, setTheme] = useState<Theme>({
