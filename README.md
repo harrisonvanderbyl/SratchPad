@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+# Running
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To open the program, run `yarn start` or `npm start` in the root directory.
 
-## Available Scripts
+# What is this exactly?
 
-In the project directory, you can run:
+This project is an experiment to help me with writing. I have plans to include rwkv, but its not even needed yet.
 
-### `npm start`
+# The main components.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## The character editor
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+You can add and edit characters.
 
-### `npm test`
+## HistoryItems
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Characters, instead of having an inventory, have a list of HistoryItems. These are events that happen to the character, and a list of items they gain or lose.
 
-### `npm run build`
+## Inventory
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The inventory is a list of items that the character has, and is calculated from the HistoryItems.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# The Loot Table
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The loot table is a list of all possible items, physical, ephemoral, and abstract.
+You can use Loot to generate more loot, effects, and events.
 
-### `npm run eject`
+## Loot
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Loot items have <b>Effects</b>.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Passive
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Items can have Passive subitems. if a character "owns" the item, they are treated as if they also own the passive subitems.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+For example.
 
-## Learn More
+Character A owns the item <b> Sword of the Gods </b>. This item has 2 passive subitems of type <b> Strength </b>.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+In the character inventory, the character will have 2 Strength items in addition to the sword.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can also have negative amounts of subitems. For example, if you have a sword that has a negative effect of -1 Strength, you will have 1 less Strength item in your inventory.
+
+## Active
+
+Items can have Active subitems. If a character "owns" the item, when the item is used in the character's inventory, a HistoryItem is created with the activeString property as its event description, and the character gains the items in the ActiveSubitems property.
+
+If you wanted a single use object, you can add -1 of itself to the ActiveSubitems property. This will remove the item from the character's inventory after it is used.
+
+## Images
+
+Clicking on an empty image will generate a picture using stable horde. It may take a minute or two to generate a picture.

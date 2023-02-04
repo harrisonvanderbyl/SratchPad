@@ -1,13 +1,13 @@
 import { V2Api, Configuration } from "stable-horde-api";
 const horde = new V2Api(
   new Configuration({
-    apiKey: "lfCRZSC4LdsWDjNlgdURyg",
+    apiKey: "0000000000",
     basePath: "https://stablehorde.net/api",
   })
 );
 
 export const Generate = async (prompt: string) => {
-  const res = await horde.postAsyncGenerate("lfCRZSC4LdsWDjNlgdURyg", {
+  const res = await horde.postAsyncGenerate("0000000000", {
     prompt,
   });
   if (!res.data.id) return [];
