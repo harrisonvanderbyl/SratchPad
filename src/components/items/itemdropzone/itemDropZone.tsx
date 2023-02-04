@@ -40,6 +40,7 @@ export const ItemDropZone = ({
       })
     );
   };
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [__, dropAdd] = useDrop(
     () => ({
       accept: ItemTypes.LOOT,
@@ -47,6 +48,7 @@ export const ItemDropZone = ({
     }),
     dropDeps
   );
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, dropRem] = useDrop(
     () => ({
       accept: ItemTypes.LOOT,

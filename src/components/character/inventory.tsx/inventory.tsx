@@ -41,6 +41,7 @@ export const Inventory = ({
     });
     setCurrentHistory(newId);
   };
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [__, dropAdd] = useDrop(
     () => ({
       accept: ItemTypes.LOOT,

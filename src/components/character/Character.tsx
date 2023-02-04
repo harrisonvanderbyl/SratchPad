@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { InputField } from "../inputs/Input";
-import { Products } from "../items/itemdropzone/itemDropZone";
 import { AlteredItem } from "../items/itemEditor";
 import { Scroll } from "../scroll/scroll";
 import { AppearenceSheet } from "./appearence.tsx/Appearence";
